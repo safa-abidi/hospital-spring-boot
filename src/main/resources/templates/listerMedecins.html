@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Listes des medecins</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<h1>Medecins</h1>
+	<a th:href="@{/medecins/ajouter}">Ajouter un medecin</a><br>
+	
+	<table th:if="${listeMedecins.size() > 0}">
+		<tr>
+			<th>CIN</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Numero du tel</th>
+			<th>Email</th>
+			<th>Departement</th>
+			<th>Specialite</th>
+		</tr>
+		<tr th:each="m : ${listeMedecins}">
+			<td th:text = ${m.cin}></td>
+			<td th:text = ${m.nom}></td>
+			<td th:text = ${m.prenom}></td>
+			<td th:text = ${m.tel}></td>
+			<td th:text = ${m.email}></td>
+			<td th:text = ${m.departement}></td>
+			<td th:text = ${m.specialite}></td>
+			<td><a th:href = "@{/medecins/supp(cin=${m.cin})}">Supprimer medecin</a></td>
+		</tr>
+		
+	</table>
+	<h3 th:if="${listeMedecins.size() == 0}">Liste vide</h3>
+	<a href="/" th:href="@{/home}">Retour vers la page d'accueil</a>
+
+</body>
+</html>

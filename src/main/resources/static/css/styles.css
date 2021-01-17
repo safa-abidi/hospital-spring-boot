@@ -1,0 +1,77 @@
+@charset "ISO-8859-1";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  /*margin: 3em auto;*/
+ padding: 2em;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+img {
+  max-width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+	padding-top: 1em;
+	font-weight: 900;
+}
+h1,h2{
+	color: #5C55FF;
+	margin-bottom: 1em;
+}
+h3,h4,h5{
+	color:#332C49;
+}
+a{
+	display: inline-block;
+	font-size: 1.3em;
+	text-decoration: none;
+	padding-bottom: 1em;
+  	font-weight: 700;
+  	color: #332C49;
+}
+input{
+	margin: 1em 0;
+	width: 50%;
+	padding: 0.7em;
+	border: 0.2em solid #5C55FF;
+}
+input[type=submit]{
+	border: #332C49 solid 3px;
+	display: inline-block;
+  	text-decoration: none;
+  	color: #fff;
+  	background-color: #332C49;
+  	padding: 0.7em 2em;
+  	border-radius: 100px;
+  	font-weight: 700;
+  	cursor: pointer;
+  	width: 50%;
+  	transition: all 0.2s ease-in-out;
+  	font-size: 1em;
+}
+input[type=submit]:hover{
+  	color: #332C49;
+  	background-color: #fff;
+}
+
+table{
+	width: 80%;
+	border-collapse: collapse;
+	margin-bottom: 1em;
+}
+table td, table th{
+	border: 0.2em solid #332C49;
+	padding: 0.6em;
+}
+
+table tr:nth-child(even){
+	background-color: #E2F0F3;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajouter lit</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+	<h1>Ajouter un lit</h1>
+	<form action="sauvegarder" method="POST" th:Object="${lit}">
+		<h4>ETAT</h4>
+		<input type="text" name="etat" th:field="*{etat}">
+		<h4>TYPE</h4>
+		<input type="text" name="type" th:field="*{typeLit}">
+		<h4>CHAMBRE</h4>
+		<input type="chambre" name="tel" th:field="*{chambre}">
+				
+		<input type="submit" value="Ajouter">
+	</form>
+</body>
+</html>

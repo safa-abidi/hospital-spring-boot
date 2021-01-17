@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajouter medecin</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="..css/styles.css">
+</head>
+<body>
+	<h1>Ajouter Medecin</h1>
+	<form action="sauvegarder" method="POST" th:Object="${medecin}">
+		CIN <input type="text" name="cin" th:field="*{cin}">
+		NOM <input type="text" name="nom" th:field="*{nom}">
+		PRENOM <input type="text" name="prenom" th:field="*{prenom}">
+		TEL <input type="tel" name="tel" th:field="*{tel}">
+		EMAIL <input type="email" name="email" th:field="*{email}">
+		DEPARTEMENT <input type="text" name="departement" th:field="*{departement}">
+		SPECIALITE <input type="text" name="specialite" th:field="*{specialite}">
+		
+		<input type="submit" value="Ajouter">
+	</form>
+</body>
+</html>

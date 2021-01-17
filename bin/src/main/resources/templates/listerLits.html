@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Liste des lits</title>
+</head>
+<body>
+	<h1>Lits</h1>
+	<a th:href="@{/lits/ajouter}">Ajouter un lit</a><br>
+	
+	<table>
+		<tr>
+			<th>Num</th>
+			<th>Etat</th>
+			<th>Chambre</th>
+			<th>type</th>
+			
+		</tr>
+		<tr th:each="l : ${listeLits}">
+			<td th:text = ${l.litId}></td>
+			<td th:text = ${l.etat}></td>
+			<td th:text = ${p.chambre}></td>
+			<td th:text = ${l.typeLit}></td>
+		</tr>
+	</table>
+</body>
+</html>

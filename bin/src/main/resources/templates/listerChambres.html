@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Listes des chambres</title>
+</head>
+<body>
+	<h1>Chambres</h1>
+	<a th:href="@{/chambres/ajouter}">Ajouter une chambre</a><br>
+	
+	<table>
+		<tr>
+			<th>Num</th>
+			<th>Departement</th>
+		</tr>
+		<tr th:each="c : ${listeChambres}">
+			<td th:text = ${c.chambreId}></td>
+			<td th:text = ${c.departement}></td>
+			
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Affecter page</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<h1>Patients</h1>
+	<table th:if="${listePatients2.size() > 0}">
+		<tr>
+			<th>CIN</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Numero du tel</th>
+			<th>Email</th>
+			<th>Maladie</th>
+			<th>Etat</th>
+		</tr>
+		<tr th:each="p : ${listePatients2}">
+			<td th:text = ${p.cin}></td>
+			<td th:text = ${p.nom}></td>
+			<td th:text = ${p.prenom}></td>
+			<td th:text = ${p.tel}></td>
+			<td th:text = ${p.email}></td>
+			<td th:text = ${p.maladie}></td>
+			<td th:text = "${p.etat_patient} ? 'admet un lit' : 'pas de lit'" ></td>
+		</tr>
+	</table>
+	<h3 th:if="${listePatients2.size() == 0}">Liste vide</h3>
+		<h1>Lits vides</h1>
+		
+	<table th:if="${listeLits2.size() > 0}">
+		<tr>
+			<th>Num</th>
+			<th>Chambre</th>
+			<th>Type</th>
+			<th>Etat</th>
+			
+		</tr>
+		<tr th:each="l : ${listeLits2}">
+			<td th:text = ${l.litId}></td>
+			<td th:text = ${l.chambre.chambreId}></td>
+			<td th:text = ${l.typeLit.libelle}></td>
+			<td th:text = "${l.etat} ? 'occupé' :'vide' "></td>
+		</tr>
+	</table>
+	<h3 th:if="${listeLits2.size() == 0}">Liste vide</h3>
+	<h1>Affecter un patient a un lit</h1>
+	<form action="/affecter" method="Post">
+		<h4>Identificateur du patient</h4>
+		<input type="number" name="id_Pat">
+		<h4>Identificateur du lit</h4>
+		<input type="number" name="id_lit">
+		<input type="submit" name="affecter" value="Affecter" >
+	</form>
+	<h3 th:text="${message}"></h3>
+	<a href="/" th:href="@{/home}">Retour vers la page d'acceuil</a>
+</body>
+</html>
