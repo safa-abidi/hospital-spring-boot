@@ -45,6 +45,7 @@ input{
 }
 input[type=submit]{
 	border: #332C49 solid 3px;
+	outline:none;
 	display: inline-block;
   	text-decoration: none;
   	color: #fff;
@@ -74,4 +75,22 @@ table td, table th{
 
 table tr:nth-child(even){
 	background-color: #E2F0F3;
+}
+
+.parts{
+	width:100%;	
+	display:flex;
+}
+
+.part1{
+	width:60%;
+	margin:auto;
+}
+
+.part1 *{
+	width:90%;
+}
+.part2{
+	width:40%;
+	margin:auto;
 }

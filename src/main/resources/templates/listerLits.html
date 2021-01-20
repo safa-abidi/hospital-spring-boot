@@ -17,6 +17,7 @@
 			<th>type</th>
 			<th>prix par jour</th>
 			<th>Etat</th>
+			<th>Action</th>
 			
 		</tr>
 		<tr th:each="l : ${listeLits}">
@@ -25,6 +26,7 @@
 			<td th:text = ${l.typeLit.libelle}></td>
 			<td th:text = ${l.typeLit.prixType}></td>
 			<td th:text = "${l.etat} ? 'occupé' :'vide' "></td>
+			<td><a th:href="@{'/Liberer/?Id=' + ${l.litId}}">Liberer</a></td>
 		</tr>
 	</table>
 	<h3 th:if="${listeLits.size() == 0}">Liste vide</h3>
