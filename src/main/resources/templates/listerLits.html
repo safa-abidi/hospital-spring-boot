@@ -25,8 +25,11 @@
 			<td th:text = ${l.chambre.departement}></td>
 			<td th:text = ${l.typeLit.libelle}></td>
 			<td th:text = ${l.typeLit.prixType}></td>
-			<td th:text = "${l.etat} ? 'occupé' :'vide' "></td>
-			<td><a th:href="@{'/Liberer/?Id=' + ${l.litId}}">Liberer</a></td>
+			<td th:text = "${l.etat} ? 'occupe' :'vide' "></td>
+			
+			<td><span th:if="${l.etat}">
+			<a th:href="@{'/Liberer/?Id=' + ${l.litId}}">Liberer</a>
+			</span></td>
 		</tr>
 	</table>
 	<h3 th:if="${listeLits.size() == 0}">Liste vide</h3>
