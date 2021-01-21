@@ -94,3 +94,13 @@ table tr:nth-child(even){
 	width:40%;
 	margin:auto;
 }
+
+.hidden{
+	display:none;
+}
+
+
+.pages {
+	list-style: none;
+	display : inline;
+}

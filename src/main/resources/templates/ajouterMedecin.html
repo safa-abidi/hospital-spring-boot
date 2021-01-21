@@ -2,13 +2,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Ajouter medecin</title>
+
+<title>Medecin Form</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-	<h1>Ajouter Medecin</h1>
-	<form action="sauvegarder" method="POST" th:Object="${medecin}">
+	<h1><span th:text="${what_to_do}"></span> Medecin</h1>
+	<form action="sauvegarder" method="POST"  th:Object="${medecin}">
 		<input type="text" name="cin" placeholder="CIN" th:field="*{cin}">
 		<input type="text" name="nom" placeholder="Nom" th:field="*{nom}">
 		<input type="text" name="prenom" placeholder="PRENOM" th:field="*{prenom}">
@@ -17,7 +18,13 @@
 		<input type="text" name="departement" placeholder="DEPARTEMENT" th:field="*{departement}">
 		<input type="text" name="specialite" placeholder="SPECIALITE" th:field="*{specialite}">
 		
+		<span th:if="${what_to_do=='Ajouter ' }">
 		<input type="submit" value="Ajouter">
+		</span>
+		
+		<span th:if="${what_to_do=='Modifier '}">
+		<input type="submit" value="Modifier">
+		</span>
 	</form>
 </body>
 </html>

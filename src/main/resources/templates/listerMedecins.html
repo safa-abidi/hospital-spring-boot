@@ -10,7 +10,7 @@
 	<h1>Medecins</h1>
 	<a th:href="@{/medecins/ajouter}">Ajouter un medecin</a><br>
 	
-	<table th:if="${listeMedecins.size() > 0}">
+	<table th:if="${pages_medecins.content.size() > 0}">
 		<tr>
 			<th>CIN</th>
 			<th>Nom</th>
@@ -20,7 +20,7 @@
 			<th>Departement</th>
 			<th>Specialite</th>
 		</tr>
-		<tr th:each="m : ${listeMedecins}">
+		<tr th:each="m : ${pages_medecins.content}">
 			<td th:text = ${m.cin}></td>
 			<td th:text = ${m.nom}></td>
 			<td th:text = ${m.prenom}></td>
@@ -29,10 +29,16 @@
 			<td th:text = ${m.departement}></td>
 			<td th:text = ${m.specialite}></td>
 			<td><a th:href = "@{/medecins/supp(cin=${m.cin})}">Supprimer medecin</a></td>
+			<td><a th:href = "@{/medecins/modif_M(cin=${m.cin})}" th:Object="${m}">Modifier medecin</a></td>
 		</tr>
-		
 	</table>
-	<h3 th:if="${listeMedecins.size() == 0}">Liste vide</h3>
+	
+	<ul>
+	<LI  class="pages" th:each="p:${pages}">&nbsp;&nbsp;[<a th:text=${p} th:href="@{liste(page=${p})}"/>]&nbsp;&nbsp;</LI>
+	</ul>
+	
+	
+	<h3 th:if="${pages_medecins.content.size() == 0}">Liste vide</h3>
 	<a href="/" th:href="@{/home}">Retour vers la page d'accueil</a>
 
 </body>

@@ -10,7 +10,7 @@
 	<h1>Lits</h1>
 	<a th:href="@{/lits/ajouter}">Ajouter un lit</a><br>
 	
-	<table>
+	<table th:if="${listeLits.content.size() > 0}">
 		<tr>
 			<th>Num</th>
 			<th>Chambre</th>
@@ -20,7 +20,7 @@
 			<th>Action</th>
 			
 		</tr>
-		<tr th:each="l : ${listeLits}">
+		<tr th:each="l : ${listeLits.content}">
 			<td th:text = ${l.litId}></td>
 			<td th:text = ${l.chambre.departement}></td>
 			<td th:text = ${l.typeLit.libelle}></td>
@@ -32,7 +32,7 @@
 			</span></td>
 		</tr>
 	</table>
-	<h3 th:if="${listeLits.size() == 0}">Liste vide</h3>
+	<h3 th:if="${listeLits.content.size() == 0}">Liste vide</h3>
 	<a href="/" th:href="@{/home}">Retour vers la page d'accueil</a>
 </body>
 </html>
