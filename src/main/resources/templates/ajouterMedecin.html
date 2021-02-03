@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Medecin Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<h1><span th:text="${what_to_do}"></span> Medecin</h1>
+	<form action="sauvegarder" method="POST"  th:Object="${medecin}">
+		<h4>CIN</h4>
+		<input type="text" name="cin" th:field="*{cin}">
+		<h4>NOM</h4>
+		<input type="text" name="nom" th:field="*{nom}">
+		<h4>PRENOM</h4>
+		<input type="text" name="prenom" th:field="*{prenom}">
+		<h4>TEL</h4>
+		<input type="tel" name="tel" th:field="*{tel}">
+		<h4>EMAIL</h4>
+		<input type="email" name="email" th:field="*{email}">
+		<h4>DEPARTEMENT</h4>
+		<input type="text" name="departement" th:field="*{departement}">
+		<h4>SPECIALITE</h4>
+		<input type="text" name="specialite" th:field="*{specialite}">
+		
+		<span th:if="${what_to_do=='Ajouter ' }">
+		<input type="submit" value="Ajouter">
+		</span>
+		
+		<span th:if="${what_to_do=='Modifier '}">
+		<input type="submit" value="Modifier">
+		</span>
+	</form>
+	
+	<!-- footer -->
+	<div th:insert="footer :: footer"></div>
+</body>
+</html>

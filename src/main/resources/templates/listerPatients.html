@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Liste des patients</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<h1>Patients</h1>
+	<a th:href="@{/patients/ajouter}">Ajouter un patient</a><br>
+	
+	<table th:if="${Patients_pages.content.size() > 0}">
+		<tr>
+			<th>CIN</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Numero du tel</th>
+			<th>Email</th>
+			<th>Maladie</th>
+			<th>Affecte a un lit</th>
+		</tr>
+		<tr th:each="p : ${Patients_pages.content}">
+			<td th:text = ${p.cin}></td>
+			<td th:text = ${p.nom}></td>
+			<td th:text = ${p.prenom}></td>
+			<td th:text = ${p.tel}></td>
+			<td th:text = ${p.email}></td>
+			<td th:text = ${p.maladie}></td>
+			<td th:text = "${p.etat_patient} ? 'oui' : 'non'"></td>
+			<td><a th:href = "@{/patients/supp(cin=${p.cin})}">Supprimer patient</a></td>
+			<td><a th:href = "@{/patients/modif_P(cin=${p.cin})}">Modifier patient</a></td>
+		</tr>
+	</table>
+	<ul>
+	<LI  class="pages" th:each="p:${pages}">&nbsp;&nbsp;[<a th:text=${p} th:href="@{liste(page=${p})}"/>]&nbsp;&nbsp;</LI>
+	</ul>
+	<h3 th:if="${Patients_pages.content.size() == 0}">Liste vide</h3>
+	<a href="/" th:href="@{/home}">Retour vers la page d'accueil</a>
+	
+	<!-- footer -->
+	<div th:insert="footer :: footer"></div>
+</body>
+</html>

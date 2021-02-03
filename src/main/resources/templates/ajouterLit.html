@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajouter lit</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+	<div class="parts">
+	<div class="part1">
+	<form action="sauvegarder" method="POST" th:Object="${lit}">
+		<h1>Ajouter un lit</h1>
+		
+		<h4>TYPE</h4>
+		<input type="number" name="type"  placeholder="NumEro de la type " th:field="*{typeLit}">
+		<h4>CHAMBRE</h4>
+		
+		<input type="number" name="tel"  placeholder="Numero de la chambre" th:field="*{chambre}">
+		<input type="submit" value="Ajouter">
+	</form>
+	</div>
+	
+	<div class="part2">
+	<h2>Liste des Types</h2>
+	<table class="tab">
+		<tr>
+			<th>Num</th>
+			<th>Libelle</th>
+			<th>prix par jour</th>
+		</tr>
+		<tr th:each="t : ${list_types}">
+			<td th:text = ${t.typeLitId}></td>
+			<td th:text = ${t.libelle}></td>
+			<td th:text = ${t.prixType}></td>
+		</tr>
+	</table>
+	
+	<h2>Liste des Chambres</h2>
+
+	<table class="tab">
+		<tr>
+			<th>Num</th>
+			<th>Departement</th>
+		</tr>
+		<tr th:each="Ch : ${list_chambres}">
+			<td th:text = ${Ch.chambreId}></td>
+			<td th:text = ${Ch.departement}></td>
+		</tr>
+	</table>
+	</div>
+	</div>
+	
+	<!-- footer -->
+	<div th:insert="footer :: footer"></div>
+	
+</body>
+</html>

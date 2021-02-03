@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Liste des patients</title>
+</head>
+<body>
+	<h1>Patients</h1>
+	<a th:href="@{/patients/ajouter}">Ajouter un patient</a><br>
+	
+	<table>
+		<tr>
+			<th>CIN</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Numero du tel</th>
+			<th>Email</th>
+			<th>Maladie</th>
+		</tr>
+		<tr th:each="p : ${listePatients}">
+			<td th:text = ${p.cin}></td>
+			<td th:text = ${p.nom}></td>
+			<td th:text = ${p.prenom}></td>
+			<td th:text = ${p.tel}></td>
+			<td th:text = ${p.email}></td>
+			<td th:text = ${p.maladie}></td>	
+		</tr>
+	</table>
+</body>
+</html>
