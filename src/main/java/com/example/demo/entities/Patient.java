@@ -31,7 +31,4 @@ public class Patient extends Personne{
 	//relation entre patient et medecin
 	@OneToMany(mappedBy = "patient")
 	Set<Consultation> consultations = new HashSet<Consultation>();
-
-
-	
 }
