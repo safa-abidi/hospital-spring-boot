@@ -12,7 +12,7 @@
 	
 	<table th:if="${Patients_pages.content.size() > 0}">
 		<tr>
-			<th>CIN</th>
+			<th>Id</th>
 			<th>Nom</th>
 			<th>Prenom</th>
 			<th>Numero du tel</th>
@@ -28,7 +28,7 @@
 			<td th:text = ${p.email}></td>
 			<td th:text = ${p.maladie}></td>
 			<td th:text = "${p.etat_patient} ? 'oui' : 'non'"></td>
-			<td><a th:href = "@{/patients/supp(cin=${p.cin})}">Supprimer patient</a></td>
+			<td>	<span th:if="${!p.etat_patient}"><a th:href = "@{/patients/supp(cin=${p.cin})}">Supprimer patient</a></span></td>
 			<td><a th:href = "@{/patients/modif_P(cin=${p.cin})}">Modifier patient</a></td>
 		</tr>
 	</table>

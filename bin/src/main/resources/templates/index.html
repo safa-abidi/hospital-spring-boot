@@ -3,12 +3,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Hopital | Home Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<h1>Bonjour, </h1>
+	<h1>Bonjour </h1>
 	<a th:href="@{/patients/liste}">Listes des patients</a><br>
 	<a th:href="@{/medecins/liste}">Listes des medecins</a><br>
 	<a th:href="@{/lits/liste}">Listes des lits</a><br>
 	<a th:href="@{/chambres/liste}">Listes des chambres</a><br>
+	<a th:href="@{/affecter_page}">Affecter un patient a un lit</a><br>
+	
+	<!-- footer -->
+	<div th:insert="footer :: footer"></div>
 </body>
 </html>

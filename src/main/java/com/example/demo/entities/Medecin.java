@@ -22,9 +22,9 @@ import lombok.NoArgsConstructor;
 
 @Entity
 public class Medecin extends Personne{
-	@Column(nullable = false)
+	//@Column(nullable = false)
 	private String departement;
-	@Column(nullable = false)
+	//@Column(nullable = false)
 	private String specialite;
 	
 	//relation entre patient et medecin

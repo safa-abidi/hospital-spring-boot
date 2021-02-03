@@ -10,8 +10,8 @@
 <body>
 	<h1><span th:text="${what_to_do}"></span> Medecin</h1>
 	<form action="sauvegarder" method="POST"  th:Object="${medecin}">
-		<h4>CIN</h4>
-		<input type="text" name="cin" th:field="*{cin}">
+		
+		<input type="text" name="cin" class="hidden" th:field="*{cin}">
 		<h4>NOM</h4>
 		<input type="text" name="nom" th:field="*{nom}">
 		<h4>PRENOM</h4>

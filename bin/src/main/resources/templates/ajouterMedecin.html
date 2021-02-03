@@ -2,15 +2,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Patient Form</title>
+
+<title>Medecin Form</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-	<h1><span th:text="${what_to_do}"></span> Patient</h1>
-	<form action="sauvegarder" method="POST" th:Object="${patient}">
-		
-		<input type="text" name="cin"  class="hidden" th:field="*{cin}">
+	<h1><span th:text="${what_to_do}"></span> Medecin</h1>
+	<form action="sauvegarder" method="POST"  th:Object="${medecin}">
+		<h4>CIN</h4>
+		<input type="text" name="cin" th:field="*{cin}">
 		<h4>NOM</h4>
 		<input type="text" name="nom" th:field="*{nom}">
 		<h4>PRENOM</h4>
@@ -19,10 +20,10 @@
 		<input type="tel" name="tel" th:field="*{tel}">
 		<h4>EMAIL</h4>
 		<input type="email" name="email" th:field="*{email}">
-		<h4>MALADIE</h4>
-		<input type="text" name="maladie" th:field="*{maladie}">
-		
-		<input type="text" name="maladie" class="hidden" th:field="*{etat_patient}">
+		<h4>DEPARTEMENT</h4>
+		<input type="text" name="departement" th:field="*{departement}">
+		<h4>SPECIALITE</h4>
+		<input type="text" name="specialite" th:field="*{specialite}">
 		
 		<span th:if="${what_to_do=='Ajouter ' }">
 		<input type="submit" value="Ajouter">
@@ -31,8 +32,6 @@
 		<span th:if="${what_to_do=='Modifier '}">
 		<input type="submit" value="Modifier">
 		</span>
-		
-		
 	</form>
 	
 	<!-- footer -->

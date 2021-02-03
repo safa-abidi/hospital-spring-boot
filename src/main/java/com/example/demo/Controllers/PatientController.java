@@ -46,6 +46,9 @@ public class PatientController {
 	@PostMapping("/sauvegarder")
 	public String act3(Patient p) {
 		System.out.println(p);
+		if(p.getEtat_patient()==null) {
+			p.setEtat_patient(false);
+		}
 		patient.save(p);
 		return "redirect:liste";
 	}

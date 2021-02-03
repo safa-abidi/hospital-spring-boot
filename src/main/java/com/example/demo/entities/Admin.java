@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 
 @Entity
 public class Admin extends Personne{
-	@Column(nullable = false, updatable = false)
+	@Column( updatable = false)
 	private String login;
-	@Column(nullable = false, updatable = false)
+	@Column( updatable = false)
 	private String password;
 }
