@@ -22,4 +22,14 @@ public class Admin extends Personne{
 	private String login;
 	@Column( updatable = false)
 	private String password;
+	
+	
+	
+	public Admin( String nom, String prenom, String tel, String email, String login, String password) {
+		super( nom, prenom, tel, email);
+		this.login = login;
+		this.password = password;
+	}
+	
+	
 }

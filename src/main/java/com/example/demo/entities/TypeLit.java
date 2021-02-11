@@ -33,4 +33,10 @@ public class TypeLit {
 	@OneToMany(mappedBy = "typeLit")
 	Set<Lit> lits = new HashSet<Lit>();
 
+	public TypeLit(String libelle, double prixType) {
+		super();
+		this.libelle = libelle;
+		this.prixType = prixType;
+	}
+
 }

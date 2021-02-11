@@ -26,6 +26,12 @@ h1,h2{
 	color: #5C55FF;
 	margin-bottom: 1em;
 }
+
+h1 span{
+	color: #5C55FF;
+	margin-bottom: 1em;
+}
+
 h3,h4,h5{
 	color:#332C49;
 }

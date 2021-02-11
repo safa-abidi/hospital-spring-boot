@@ -45,4 +45,12 @@ public abstract class Personne {
 	
 	private String email;
 
+	public Personne(String nom, String prenom, String tel, String email) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.tel = tel;
+		this.email = email;
+	}
+
 }

@@ -31,5 +31,12 @@ public class Chambre {
 
 	//relation entre lit et chambre
 	@OneToMany(mappedBy = "chambre")
-	Set<Lit> lits = new HashSet<Lit>(); 	
+	Set<Lit> lits = new HashSet<Lit>();
+
+	public Chambre(String departement) {
+		super();
+		this.departement = departement;
+	}
+
+		
 }
